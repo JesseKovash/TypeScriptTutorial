@@ -1,10 +1,24 @@
 "use strict";
-const person = {
-    name: 'jesse',
-    age: 37,
-    hobbies: ['climb', 'bake', 'woodwork', 'run']
-};
-console.log(person.name);
-for (const hobby of person.hobbies) {
-    console.log(hobby, typeof hobby);
+class Department {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+        this.employees = [];
+        this.name = name;
+        this.id = id;
+    }
+    describe() {
+        console.log(`Department (${this.id}): ${this.name}`);
+    }
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+    printEmployeeInformation() {
+        console.log(this.employees.length);
+        console.log(this.employees);
+    }
 }
+const accounting = new Department('Accounting', '123');
+accounting.addEmployee('Max');
+accounting.addEmployee('Jesse');
+accounting.describe();
