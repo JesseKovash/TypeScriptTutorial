@@ -1,7 +1,7 @@
 const person = {
   name: 'jesse',
   age: 37,
-  hobbies: ['climb', 'bake', 'woodwork']
+  hobbies: ['climb', 'bake', 'woodwork', 'run']
 };
 
 console.log(person.name)
