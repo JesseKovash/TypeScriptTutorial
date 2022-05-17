@@ -1,44 +1,24 @@
 "use strict";
-class Department {
-    constructor(id, name) {
-        this.id = id;
-        this.name = name;
-        this.employees = [];
-        this.name = name;
-        this.id = id;
+let add;
+add = (n1, n2) => {
+    return n1 + n2;
+};
+class Person {
+    constructor(n, age) {
+        if (n) {
+            this.name = n;
+        }
+        this.age = age;
     }
-    describe() {
-        console.log(`Department (${this.id}): ${this.name}`);
-    }
-    addEmployee(employee) {
-        this.employees.push(employee);
-    }
-    printEmployeeInformation() {
-        console.log(this.employees.length);
-        console.log(this.employees);
-    }
-}
-class ITDepartment extends Department {
-    constructor(id, admins) {
-        super(id, 'IT');
-        this.admins = admins;
-        this.admins = admins;
+    greet(phrase) {
+        if (this.name) {
+            console.log(phrase + ' ' + this.name);
+        }
+        else {
+            console.log('Hi');
+        }
     }
 }
-class AccountingDepartment extends Department {
-    constructor(id, reports) {
-        super(id, 'ACCT');
-        this.reports = reports;
-    }
-    addReport(text) {
-        this.reports.push(text);
-    }
-    printReports() {
-        console.log(this.reports);
-    }
-}
-const acctDept = new AccountingDepartment('d2', []);
-acctDept.addReport('hello');
-acctDept.addReport('Goodbye');
-acctDept.addEmployee('jesse');
-console.log('acctdept: ', acctDept);
+let user1 = new Person('Jesse', 38);
+console.log(user1);
+user1.greet('hello');

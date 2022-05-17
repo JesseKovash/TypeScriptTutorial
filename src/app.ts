@@ -1,52 +1,43 @@
-class Department {
-  protected employees: string[] = [];
-
-  constructor(private readonly id: string, public name: string) {
-    this.name = name;
-    this.id = id;
-  }
-
-  describe(this: Department) {
-    console.log(`Department (${this.id}): ${this.name}`);
-  }
-
-  addEmployee(employee: string) {
-    this.employees.push(employee)
-  }
-
-  printEmployeeInformation() {
-    console.log(this.employees.length);
-    console.log(this.employees);
-  }
+interface AddFn {
+  (a: number, b: number): number;
 }
 
-class ITDepartment extends Department {
-  constructor(id: string, public admins: string[]) {
-    super(id, 'IT');
-    this.admins = admins;
-  }
+let add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+
+interface Named  {
+  readonly name?: string;
+  outputName?: string;
 }
 
-class AccountingDepartment extends Department {
-  constructor(id: string, private reports: string[]) {
-    super(id, 'ACCT')
+interface Greetable extends Named{
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name?: string;
+  age: number;
+  constructor(n: string, age: number) {
+    if (n) {
+      this.name = n;
+    }
+    this.age = age
   }
 
-  addReport(text: string) {
-    this.reports.push(text);
-  }
-
-  printReports() {
-    console.log(this.reports)
+  greet(phrase: string) {
+    if (this.name) {
+      console.log(phrase + ' ' + this.name)
+    } else {
+      console.log('Hi')
+    }
   }
 
 }
 
-// const itDept = new ITDepartment('d1', ['Jesse'])
-// console.log('itdept: ', itDept)
+let user1 = new Person('Jesse', 38);
+console.log(user1)
 
-const acctDept = new AccountingDepartment('d2', []);
-acctDept.addReport('hello');
-acctDept.addReport('Goodbye');
-acctDept.addEmployee('jesse')
-console.log('acctdept: ', acctDept)
+user1.greet('hello')
