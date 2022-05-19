@@ -43,3 +43,4 @@ function createCourseGoal(title, description, date) {
     return courseGoal;
 }
 const names = ['jesse', 'gerty'];
+//# sourceMappingURL=generics.js.map

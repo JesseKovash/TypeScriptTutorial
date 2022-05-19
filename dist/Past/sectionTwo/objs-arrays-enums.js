@@ -6,3 +6,4 @@ var Role;
     Role["AUTHOR"] = "AUTHOR";
 })(Role || (Role = {}));
 ;
+//# sourceMappingURL=objs-arrays-enums.js.map

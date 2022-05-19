@@ -61,3 +61,4 @@ const errorBag = {
     email: 'Not a valid Email!',
     username: 'Must start with a capital character!'
 };
+//# sourceMappingURL=six.js.map
